@@ -5,9 +5,7 @@
 
 # 🖥️ Projeto Laboratório de Informática
 
-<div align="center">
-  <img src="https://postimg.cc/YjsKs2jW" alt="Banner do Laboratório" width="800"/>
-</div>
+<[![Captura-de-tela-2025-02-17-210414.png](https://i.postimg.cc/Wb2NthvX/Captura-de-tela-2025-02-17-210414.png)](https://postimg.cc/YjsKs2jW)
 
 ---
 
