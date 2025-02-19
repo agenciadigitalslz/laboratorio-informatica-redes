@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Layout do Laboratório de Informática" />
+    <meta
+      name="keywords"
+      content="laboratório, informática, rede, computadores"
+    />
+    <meta name="author" content="André Lopes" />
+    <meta name="robots" content="index, follow" />
+    <title>
+      Laboratório de Informática - Diagrama mostrando a disposição de 24
+      computadores em três fileiras
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Layout do Laboratório de Informática</h1>
+      <image
+        src="img/cab.png"
+        alt="Laboratório de Informática"
+        class="lab-image"
+      >
+      </image>
+      <!-- Seção de conteúdo gráfico -->
+      <div class="lab-container">
+        <svg
+          viewBox="0 0 800 600"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-labelledby="lab-title lab-desc"
+        >
+          <!-- Paredes do laboratório -->
+          <rect
+            x="50"
+            y="50"
+            width="700"
+            height="500"
+            fill="none"
+            stroke="black"
+            stroke-width="3"
+          />
+
+          <!-- Legenda -->
+          <!-- Legenda atualizada com espaçamento reduzido -->
+          <g class="legenda" transform="translate(100, 20)">
+            <g class="legenda-item" transform="translate(0, 0)">
+              <image
+                href="img/pc.png"
+                width="30"
+                height="20"
+                aria-label="Computador"
+                role="img"
+              />
+              <text x="40" y="15" font-size="12">Computadores</text>
+            </g>
+            <g class="legenda-item" transform="translate(120, 0)">
+              <image
+                href="img/hub.png"
+                width="30"
+                height="20"
+                aria-label="Switch Hub"
+                role="img"
+              />
+              <text x="40" y="15" font-size="12">Switch Hub</text>
+            </g>
+            <g class="legenda-item" transform="translate(240, 0)">
+              <image
+                href="img/roteador.png"
+                width="30"
+                height="20"
+                aria-label="Roteador"
+                role="img"
+              />
+              <text x="40" y="15" font-size="12">Roteador</text>
+            </g>
+            <g class="legenda-item" transform="translate(360, 0)">
+              <line
+                x1="0"
+                y1="10"
+                x2="30"
+                y2="10"
+                stroke="black"
+                stroke-dasharray="5,5"
+              />
+              <text x="40" y="15" font-size="12">Cabo Cat 6</text>
+            </g>
+            <g class="legenda-item" transform="translate(480, 0)">
+              <circle cx="15" cy="10" r="3" fill="black" />
+              <text x="30" y="15" font-size="12">Conector RJ45</text>
+            </g>
+          </g>
+
+          <!-- Primeira fileira de PCs -->
+          <g class="pc-row" transform="translate(100, 150)">
+            <g class="pc-station" transform="translate(0,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 1"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 1</text>
+            </g>
+            <g class="pc-station" transform="translate(80,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 2"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 2</text>
+            </g>
+            <g class="pc-station" transform="translate(160,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 3"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 3</text>
+            </g>
+            <g class="pc-station" transform="translate(240,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 4"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 4</text>
+            </g>
+            <g class="pc-station" transform="translate(320,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 5"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 5</text>
+            </g>
+            <g class="pc-station" transform="translate(400,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 6"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 6</text>
+            </g>
+            <g class="pc-station" transform="translate(480,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 7"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 7</text>
+            </g>
+            <g class="pc-station" transform="translate(560,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 8"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 8</text>
+            </g>
+          </g>
+
+          <!-- Segunda fileira de PCs -->
+          <g class="pc-row" transform="translate(100, 250)">
+            <g class="pc-station" transform="translate(0,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 9"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 9</text>
+            </g>
+            <g class="pc-station" transform="translate(80,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 10"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 10</text>
+            </g>
+            <g class="pc-station" transform="translate(160,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 11"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 11</text>
+            </g>
+            <g class="pc-station" transform="translate(240,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 12"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 12</text>
+            </g>
+            <g class="pc-station" transform="translate(320,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 13"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 13</text>
+            </g>
+            <g class="pc-station" transform="translate(400,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 14"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 14</text>
+            </g>
+            <g class="pc-station" transform="translate(480,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 15"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 15</text>
+            </g>
+            <g class="pc-station" transform="translate(560,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 16"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 16</text>
+            </g>
+          </g>
+
+          <!-- Terceira fileira de PCs -->
+          <g class="pc-row" transform="translate(100, 350)">
+            <g class="pc-station" transform="translate(0,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 17"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 17</text>
+            </g>
+            <g class="pc-station" transform="translate(80,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 18"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 18</text>
+            </g>
+            <g class="pc-station" transform="translate(160,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 19"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 19</text>
+            </g>
+            <g class="pc-station" transform="translate(240,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 20"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 20</text>
+            </g>
+            <g class="pc-station" transform="translate(320,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 21"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 21</text>
+            </g>
+            <g class="pc-station" transform="translate(400,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 22"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 22</text>
+            </g>
+            <g class="pc-station" transform="translate(480,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 23"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 23</text>
+            </g>
+            <g class="pc-station" transform="translate(560,0)">
+              <image
+                href="img/pc.png"
+                class="pc-icon"
+                width="40"
+                height="30"
+                aria-label="PC 24"
+                role="img"
+              />
+              <text x="5" y="45" font-size="10">PC 24</text>
+            </g>
+          </g>
+
+          <!-- Equipamentos de rede -->
+          <g class="network-devices" transform="translate(350, 450)">
+            <image
+              href="img/hub.png"
+              class="network-device switch"
+              width="80"
+              height="40"
+              aria-label="Switch Hub"
+              role="img"
+            />
+            <text x="15" y="55" font-size="12">Switch Hub</text>
+
+            <image
+              href="img/roteador.png"
+              class="network-device router"
+              x="120"
+              width="60"
+              height="40"
+              aria-label="Roteador com Firewall"
+              role="img"
+            />
+            <text x="120" y="55" font-size="12">
+              Roteador com firewall & Internet
+            </text>
+
+            <!-- Conexão Switch-Router -->
+            <line
+              class="cable main-cable"
+              x1="80"
+              y1="20"
+              x2="120"
+              y2="20"
+              stroke="black"
+              stroke-width="2"
+            />
+            <circle class="connector" cx="80" cy="20" r="3" fill="black" />
+            <circle class="connector" cx="120" cy="20" r="3" fill="black" />
+          </g>
+
+          <!-- Conexões de rede -->
+          <g class="network-connections">
+            <!-- Primeira fileira -->
+            <g class="cables" stroke="black" stroke-dasharray="5,5">
+              <!-- PC 1-8 para Switch -->
+            </g>
+            <!-- Segunda fileira -->
+            <g class="cables" stroke="black" stroke-dasharray="5,5">
+              <!-- PC 9-16 para Switch -->
+            </g>
+            <!-- Terceira fileira -->
+            <g class="cables" stroke="black" stroke-dasharray="5,5">
+              <!-- PC 17-24 para Switch -->
+            </g>
+          </g>
+        </svg>
+        <p class="lab-description">
+          <strong>OBS:</strong> Clique nos <strong>ícones</strong> para ver a
+          legenda e as <strong>conexões de rede</strong>.
+        </p>
+      </div>
+      <!-- Seção de conteúdo textual -->
+      <div class="content-section">
+        <h2>Projeto de Laboratório de Informática</h2>
+        <p>
+          O laboratório de informática será composto por
+          <strong>24 computadores</strong>, um
+          <strong>switch gerenciável de 24 portas</strong>, um
+          <strong>roteador com firewall</strong> e os cabos de rede
+          <strong>CAT6</strong>. A disposição dos dispositivos será feita de
+          maneira funcional para garantir o melhor aproveitamento do espaço e a
+          otimização da rede.
+        </p>
+
+        <h3>Disposição dos dispositivos:</h3>
+        <ul>
+          <li>
+            <strong>Computadores:</strong> Organizados em três fileiras de oito
+            máquinas cada.
+          </li>
+          <li>
+            <strong>Switch:</strong> Posicionado em um local central para
+            distribuir os pacotes de rede de maneira eficiente.
+          </li>
+          <li>
+            <strong>Roteador:</strong> Conectado ao switch, fornecendo acesso à
+            internet e segurança via firewall.
+          </li>
+          <li>
+            <strong>Cabos de rede:</strong> Utilização de cabos CAT6 para
+            garantir alta velocidade e estabilidade na transmissão de dados.
+          </li>
+        </ul>
+
+        <h3>Protocolo de Funcionamento da Rede Local</h3>
+        <p>
+          A rede local do laboratório será baseada no
+          <strong>protocolo TCP/IP</strong>, garantindo a comunicação eficiente
+          entre os dispositivos e acesso à internet.
+        </p>
+        <ul>
+          <li>
+            <strong>Protocolo adotado:</strong> TCP/IP, que permite a
+            comunicação estruturada entre os dispositivos.
+          </li>
+          <li>
+            <strong>Comunicação entre dispositivos:</strong>
+            <ul>
+              <li>
+                Cada computador será configurado com um endereço IP dentro da
+                mesma sub-rede.
+              </li>
+              <li>
+                O <strong>switch</strong> atuará na distribuição dos pacotes
+                dentro da LAN (Local Area Network).
+              </li>
+              <li>
+                O <strong>roteador</strong> conectará a LAN à internet e
+                funcionará como firewall para segurança.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Acesso à Internet:</strong>
+            <ul>
+              <li>
+                O roteador gerenciará a saída dos pacotes para a internet.
+              </li>
+              <li>
+                O firewall embutido protegerá contra acessos não autorizados.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Topologia Lógica Adotada</h3>
+        <p>
+          A topologia lógica adotada será a
+          <strong>topologia em estrela</strong>.
+        </p>
+        <ul>
+          <li>
+            <strong>Facilidade de manutenção:</strong> Caso um dispositivo
+            falhe, a rede continua funcionando normalmente.
+          </li>
+          <li>
+            <strong>Desempenho otimizado:</strong> O switch garante uma melhor
+            distribuição dos pacotes, reduzindo congestionamentos.
+          </li>
+          <li>
+            <strong>Segurança:</strong> A comunicação entre os dispositivos
+            passa pelo switch, permitindo um melhor controle do tráfego de
+            dados.
+          </li>
+          <li>
+            <strong>Expansão futura:</strong> A topologia permite a adição de
+            mais dispositivos sem comprometer o desempenho da rede.
+          </li>
+        </ul>
+
+        <h3>Conclusão</h3>
+        <p>
+          O projeto atende às necessidades da escola municipal, garantindo um
+          ambiente tecnológico funcional e seguro para os alunos e professores.
+          A estruturação em topologia estrela, aliada ao uso de protocolos
+          confiáveis como o TCP/IP, garante eficiência, desempenho e segurança
+          para a rede do laboratório.
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

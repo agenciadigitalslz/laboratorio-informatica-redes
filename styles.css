@@ -1,0 +1,433 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.lab-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.lab-image {
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+}
+
+/* Estilos corrigidos da legenda */
+.legenda {
+  pointer-events: none; /* Desativa eventos do grupo geral da legenda */
+}
+
+.legenda-item {
+  pointer-events: all; /* Reativa eventos apenas para os itens da legenda */
+}
+
+.legenda-item image,
+.legenda-item line,
+.legenda-item circle {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.legenda-item:hover image,
+.legenda-item:hover line,
+.legenda-item:hover circle {
+  transform: scale(1.2);
+}
+
+.legenda-item text {
+  pointer-events: none; /* Impede que o texto interfira no hover */
+  user-select: none; /* Impede seleção do texto */
+}
+
+/* Estilos dos elementos do laboratório */
+.pc-icon {
+  cursor: pointer;
+  transition: transform 0.2s;
+  pointer-events: all;
+}
+
+.pc-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.network-device {
+  cursor: pointer;
+  transition: transform 0.2s;
+  pointer-events: all;
+}
+
+.network-device:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.cable {
+  stroke: #333;
+  stroke-width: 1;
+  transition: stroke-width 0.2s, stroke 0.2s;
+}
+
+.cable:hover {
+  stroke-width: 2;
+  stroke: #4a90e2;
+}
+
+.main-cable {
+  stroke-width: 2;
+  stroke: #2c3e50;
+}
+
+.connector {
+  transition: r 0.2s;
+}
+
+.connector:hover {
+  r: 5;
+}
+
+.network-connections line {
+  stroke: #666;
+  stroke-dasharray: 5, 5;
+  transition: stroke-width 0.2s, stroke 0.2s;
+}
+
+.network-connections line:hover {
+  stroke-width: 2;
+  stroke: #4a90e2;
+}
+
+.pc-station text {
+  user-select: none;
+}
+
+/* Estilos para a seção de conteúdo textual */
+.content-section {
+  margin-top: -20px; /* Reduzir a margem superior para levantar o título */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.content-section h3 {
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.content-section ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.content-section ul li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.content-section ul li strong {
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .lab-container {
+    overflow-x: scroll;
+  }
+
+  svg {
+    min-height: 250px; /* Reduzir a altura mínima do SVG em dispositivos menores */
+  }
+
+  .content-section {
+    padding: 0px;
+  }
+
+  .content-section h2 {
+    font-size: 1.5em;
+  }
+
+  .content-section h3 {
+    font-size: 1.2em;
+  }
+
+  .content-section p {
+    font-size: 0.9em;
+  }
+
+  .content-section ul li {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  .content-section {
+    padding: 10px;
+  }
+
+  .content-section h2 {
+    font-size: 1.3em;
+  }
+
+  .content-section h3 {
+    font-size: 1.1em;
+  }
+
+  .content-section p {
+    font-size: 0.8em;
+  }
+
+  .content-section ul li {
+    font-size: 0.8em;
+  }
+}
+
+.lab-description {
+  text-align: center;
+}
+
+/* Ajustes de usabilidade geral */
+@media (hover: none) {
+  /* Ajustes para dispositivos touch */
+  .pc-icon:hover,
+  .network-device:hover,
+  .legenda-item:hover image,
+  .legenda-item:hover line,
+  .legenda-item:hover circle {
+    transform: none;
+  }
+}
+
+/* Ajustes de impressão */
+@media print {
+  .container {
+    box-shadow: none;
+  }
+
+  svg {
+    page-break-inside: avoid;
+  }
+
+  .content-section {
+    background-color: white;
+    box-shadow: none;
+  }
+}
+
+/* Reduzir espaçamento entre o SVG e a observação */
+.lab-container p {
+  margin-top: 0px;
+}
+
+/* Adicionar breakpoint para telas muito grandes */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  svg {
+    max-height: 800px;
+  }
+}
+
+.info-box {
+  cursor: default;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  transition: opacity 0.3s ease;
+}
+
+.info-box:hover {
+  opacity: 1;
+}
+
+/* Estilização para a seção de conteúdo */
+.content-section {
+  margin-top: -50px;
+  padding: 30px;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  color: #2c3e50;
+  font-size: 2em;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.content-section h2::before {
+  content: "\f5fd"; /* Ícone de graduação */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: #3498db;
+}
+
+.content-section h3 {
+  color: #34495e;
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícones para os títulos h3 */
+.content-section h3::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.9em;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+}
+
+/* Ícones específicos para cada seção */
+.content-section h3:nth-of-type(1)::before {
+  content: "\f0eb"; /* Ícone de lâmpada */
+}
+
+.content-section h3:nth-of-type(2)::before {
+  content: "\f542"; /* Ícone de rede */
+}
+
+.content-section h3:nth-of-type(3)::before {
+  content: "\f0e8"; /* Ícone de diagrama */
+}
+
+.content-section h3:nth-of-type(4)::before {
+  content: "\f058"; /* Ícone de check */
+}
+
+.content-section p {
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.content-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content-section ul li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.content-section ul li::before {
+  content: "\f0a9";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #3498db;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.content-section ul ul {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.content-section ul ul li::before {
+  content: "\f111";
+  font-size: 0.5em;
+  top: 9px;
+}
+
+.content-section strong {
+  color: #2c3e50;
+  font-weight: 600;
+  background: linear-gradient(
+    120deg,
+    rgba(52, 152, 219, 0.2) 0%,
+    rgba(52, 152, 219, 0.2) 100%
+  );
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Efeito hover nos itens da lista */
+.content-section ul li:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+/* Responsividade para os novos estilos */
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.6em;
+  }
+
+  .content-section h3 {
+    font-size: 1.2em;
+  }
+}
