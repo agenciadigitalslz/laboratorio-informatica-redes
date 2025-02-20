@@ -9,33 +9,45 @@ document.addEventListener("DOMContentLoaded", function () {
 function createNetworkConnections() {
   const svg = document.querySelector("svg");
   const networkConnections = document.querySelector(".network-connections");
-  const switchPosition = { x: 390, y: 470 }; // Posição central do switch
+  const switchPosition = { x: 390, y: 470 };
 
-  // Coordenadas para cada fileira de PCs
+  // Garantir que as conexões sejam criadas antes dos PCs
+  networkConnections.style.zIndex = "1";
+
   const pcRows = [
-    { y: 150, startX: 120 }, // Primeira fileira
-    { y: 250, startX: 120 }, // Segunda fileira
-    { y: 350, startX: 120 }, // Terceira fileira
+    { y: 155, startX: 110 }, // Primeira fileira
+    { y: 255, startX: 115 }, // Segunda fileira
+    { y: 355, startX: 120 }, // Terceira fileira
   ];
 
-  // Criar conexões para cada fileira
-  pcRows.forEach((row) => {
-    for (let i = 0; i < 8; i++) {
-      // 8 PCs por fileira
-      const pcX = row.startX + i * 80; // 80 é o espaçamento entre PCs
+  // Criar grupo para as conexões
+  const cablesGroup = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "g"
+  );
+  cablesGroup.setAttribute("class", "cables-group");
 
-      // Criar linha de conexão
-      const line = document.createElementNS(
+  pcRows.forEach((row, rowIndex) => {
+    for (let i = 0; i < 8; i++) {
+      const pcX = row.startX + i * 80;
+      const path = document.createElementNS(
         "http://www.w3.org/2000/svg",
-        "line"
+        "path"
       );
-      line.setAttribute("x1", pcX);
-      line.setAttribute("y1", row.y + 15); // +15 para centralizar no PC
-      line.setAttribute("x2", switchPosition.x);
-      line.setAttribute("y2", switchPosition.y);
-      line.setAttribute("stroke", "black");
-      line.setAttribute("stroke-dasharray", "5,5");
-      line.setAttribute("class", "cable");
+
+      const corridorX = pcX;
+      const switchY = switchPosition.y - rowIndex * 3 - i * 0;
+
+      const pathD = `M ${pcX} ${row.y + 15}
+                     L ${pcX} ${switchPosition.y - 50}
+                     L ${switchPosition.x} ${switchY}`;
+
+      path.setAttribute("d", pathD);
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke", "black");
+      path.setAttribute("stroke-dasharray", "5,5");
+      path.setAttribute("class", "cable");
+      path.setAttribute("pointer-events", "none"); // Impedir que os cabos interfiram nos cliques
 
       // Criar conector no PC
       const connectorPC = document.createElementNS(
@@ -47,24 +59,29 @@ function createNetworkConnections() {
       connectorPC.setAttribute("r", "3");
       connectorPC.setAttribute("fill", "black");
       connectorPC.setAttribute("class", "connector");
+      connectorPC.setAttribute("pointer-events", "none"); // Impedir que os conectores interfiram nos cliques
 
-      // Adicionar elementos ao SVG
-      networkConnections.appendChild(line);
-      networkConnections.appendChild(connectorPC);
+      cablesGroup.appendChild(path);
+      cablesGroup.appendChild(connectorPC);
     }
   });
+
+  // Adicionar o grupo de cabos ao networkConnections
+  networkConnections.appendChild(cablesGroup);
 }
 
 function setupInteractivity() {
-  // Interatividade para os PCs
+  // Ajuste na interatividade dos PCs
   const pcs = document.querySelectorAll(".pc-icon");
   pcs.forEach((pc, index) => {
+    pc.style.cursor = "pointer"; // Garantir que o cursor mude ao passar sobre os PCs
+    pc.setAttribute("pointer-events", "all"); // Garantir que os PCs recebam eventos de clique
     pc.addEventListener("click", function (event) {
+      event.stopPropagation(); // Impedir propagação do evento
       const pcNumber = index + 1;
       showDeviceInfo(event, "PC", pcNumber);
     });
   });
-
   // Interatividade para dispositivos de rede
   const networkDevices = document.querySelectorAll(".network-device");
   networkDevices.forEach((device) => {

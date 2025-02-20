@@ -77,58 +77,77 @@ svg {
   transform: scale(1.1);
   filter: brightness(1.2);
 }
-
 .network-device {
   cursor: pointer;
   transition: transform 0.2s;
   pointer-events: all;
 }
-
 .network-device:hover {
   transform: scale(1.1);
   filter: brightness(1.2);
 }
-
+.network-info rect {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+.network-info:hover rect {
+  opacity: 1;
+}
+.network-info text {
+  font-family: monospace;
+}
+.network-cables line {
+  transition: stroke-width 0.2s ease;
+}
+.network-cables line:hover {
+  stroke-width: 2;
+  stroke: #3498db;
+}
+.network-status {
+  cursor: pointer;
+}
+.network-status:hover rect {
+  fill: #f1f3f5;
+}
+/* Ajuste para melhor visualização das conexões */
+.switch-connections line {
+  stroke-linecap: round;
+  transition: stroke 0.3s ease;
+}
+.switch-connections line:hover {
+  stroke: #3498db;
+}
 .cable {
   stroke: #333;
   stroke-width: 1;
   transition: stroke-width 0.2s, stroke 0.2s;
 }
-
 .cable:hover {
   stroke-width: 2;
   stroke: #4a90e2;
 }
-
 .main-cable {
   stroke-width: 2;
   stroke: #2c3e50;
 }
-
 .connector {
   transition: r 0.2s;
 }
-
 .connector:hover {
   r: 5;
 }
-
 .network-connections line {
   stroke: #666;
   stroke-dasharray: 5, 5;
   transition: stroke-width 0.2s, stroke 0.2s;
 }
-
 .network-connections line:hover {
   stroke-width: 2;
   stroke: #4a90e2;
 }
-
 .pc-station text {
   user-select: none;
 }
-
-/* Estilos para a seção de conteúdo textual */
 .content-section {
   margin-top: -20px; /* Reduzir a margem superior para levantar o título */
   padding: 20px;
@@ -136,110 +155,86 @@ svg {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .content-section h2 {
   color: #333;
   margin-bottom: 20px;
 }
-
 .content-section h3 {
   color: #444;
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
 .content-section p {
   line-height: 1.6;
   color: #555;
 }
-
 .content-section ul {
   margin: 10px 0;
   padding-left: 20px;
 }
-
 .content-section ul li {
   margin-bottom: 10px;
   color: #555;
 }
-
 .content-section ul li strong {
   color: #333;
 }
-
 /* Responsividade */
 @media (max-width: 768px) {
   .container {
     padding: 10px;
   }
-
   h1 {
     font-size: 1.5em;
   }
-
   .lab-container {
     overflow-x: scroll;
   }
-
   svg {
     min-height: 250px; /* Reduzir a altura mínima do SVG em dispositivos menores */
   }
-
   .content-section {
     padding: 0px;
   }
-
   .content-section h2 {
     font-size: 1.5em;
   }
-
   .content-section h3 {
     font-size: 1.2em;
   }
-
   .content-section p {
     font-size: 0.9em;
   }
-
   .content-section ul li {
     font-size: 0.9em;
   }
 }
-
 @media (max-width: 480px) {
   .container {
     padding: 10px;
   }
-
   h1 {
     font-size: 1.3em;
   }
-
   .content-section {
     padding: 10px;
   }
-
   .content-section h2 {
     font-size: 1.3em;
   }
-
   .content-section h3 {
     font-size: 1.1em;
   }
-
   .content-section p {
     font-size: 0.8em;
   }
-
   .content-section ul li {
     font-size: 0.8em;
   }
 }
-
 .lab-description {
   text-align: center;
 }
-
 /* Ajustes de usabilidade geral */
 @media (hover: none) {
   /* Ajustes para dispositivos touch */
@@ -251,51 +246,66 @@ svg {
     transform: none;
   }
 }
-
 /* Ajustes de impressão */
 @media print {
   .container {
     box-shadow: none;
   }
-
   svg {
     page-break-inside: avoid;
   }
-
   .content-section {
     background-color: white;
     box-shadow: none;
   }
 }
-
 /* Reduzir espaçamento entre o SVG e a observação */
 .lab-container p {
   margin-top: 0px;
 }
-
 /* Adicionar breakpoint para telas muito grandes */
 @media (min-width: 1440px) {
   .container {
     max-width: 1400px;
   }
-
   svg {
     max-height: 800px;
   }
 }
-
 .info-box {
   cursor: default;
   user-select: none;
   background-color: rgba(255, 255, 255, 0.95) !important;
   transition: opacity 0.3s ease;
 }
-
 .info-box:hover {
   opacity: 1;
 }
-
-/* Estilização para a seção de conteúdo */
+/* Limpeza e organização das classes de rede */
+.network-connections {
+  pointer-events: all;
+}
+.network-path {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5;
+  stroke-dasharray: 5, 5;
+  transition: all 0.3s ease;
+}
+.network-path:hover {
+  stroke: #3498db;
+  stroke-width: 2.5;
+}
+.cable-connector {
+  fill: #666;
+  r: 3;
+  transition: all 0.3s ease;
+}
+.cable-connector:hover {
+  fill: #3498db;
+  r: 4;
+}
+/* Remove duplicações e unifica estilos da content-section */
 .content-section {
   margin-top: -50px;
   padding: 30px;
@@ -303,7 +313,6 @@ svg {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .content-section h2 {
   color: #2c3e50;
   font-size: 2em;
@@ -312,7 +321,6 @@ svg {
   padding-bottom: 10px;
   position: relative;
 }
-
 .content-section h2::before {
   content: "\f5fd"; /* Ícone de graduação */
   font-family: "Font Awesome 6 Free";
@@ -320,7 +328,6 @@ svg {
   margin-right: 10px;
   color: #3498db;
 }
-
 .content-section h3 {
   color: #34495e;
   font-size: 1.4em;
@@ -330,7 +337,6 @@ svg {
   align-items: center;
   gap: 10px;
 }
-
 /* Ícones para os títulos h3 */
 .content-section h3::before {
   font-family: "Font Awesome 6 Free";
@@ -345,43 +351,35 @@ svg {
   color: white;
   border-radius: 50%;
 }
-
 /* Ícones específicos para cada seção */
 .content-section h3:nth-of-type(1)::before {
   content: "\f0eb"; /* Ícone de lâmpada */
 }
-
 .content-section h3:nth-of-type(2)::before {
   content: "\f542"; /* Ícone de rede */
 }
-
 .content-section h3:nth-of-type(3)::before {
   content: "\f0e8"; /* Ícone de diagrama */
 }
-
 .content-section h3:nth-of-type(4)::before {
   content: "\f058"; /* Ícone de check */
 }
-
 .content-section p {
   line-height: 1.8;
   color: #444;
   margin-bottom: 20px;
   text-align: justify;
 }
-
 .content-section ul {
   list-style: none;
   padding-left: 0;
 }
-
 .content-section ul li {
   margin-bottom: 15px;
   padding-left: 25px;
   position: relative;
   line-height: 1.6;
 }
-
 .content-section ul li::before {
   content: "\f0a9";
   font-family: "Font Awesome 6 Free";
@@ -391,18 +389,15 @@ svg {
   left: 0;
   top: 2px;
 }
-
 .content-section ul ul {
   margin-top: 10px;
   margin-left: 20px;
 }
-
 .content-section ul ul li::before {
   content: "\f111";
   font-size: 0.5em;
   top: 9px;
 }
-
 .content-section strong {
   color: #2c3e50;
   font-weight: 600;
@@ -414,19 +409,16 @@ svg {
   padding: 2px 5px;
   border-radius: 3px;
 }
-
 /* Efeito hover nos itens da lista */
 .content-section ul li:hover {
   transform: translateX(5px);
   transition: transform 0.3s ease;
 }
-
 /* Responsividade para os novos estilos */
 @media (max-width: 768px) {
   .content-section h2 {
     font-size: 1.6em;
   }
-
   .content-section h3 {
     font-size: 1.2em;
   }
