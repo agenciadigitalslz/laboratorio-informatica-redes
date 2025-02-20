@@ -5,7 +5,7 @@
 
 # 🖥️ Projeto Laboratório de Informática
 
-[![Captura-de-tela-2025-02-17-210414.png](https://i.postimg.cc/Wb2NthvX/Captura-de-tela-2025-02-17-210414.png)](https://postimg.cc/YjsKs2jW)
+[![lab.png](https://i.postimg.cc/4yfzzdmL/lab.png)](https://postimg.cc/9RkR2cPZ)
 
 ---
 
